@@ -103,6 +103,7 @@ body{
     font-family: "Clear Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
     padding: 2%;
     border-radius: 5%;
+    cursor: pointer;
 }
 .brands>div:hover{
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; 
