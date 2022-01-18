@@ -65,3 +65,45 @@ body{
     width: 90%;
     margin: auto;
 }
+#brands_text{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 2%;
+}
+#brands_text>p{
+    font-size: 18px;
+    font-family: "Clear Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+#brands_text>button{
+    width: 60px;
+    height: 30px;
+    background: coral;
+    color: white;
+    border: none;
+    border-radius: 5%;
+    font-size: 10px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.brands{
+    display: flex;
+    justify-content: space-around;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+   padding-left: 15%;
+   padding-right: 15%;
+}
+.brands>img{
+    cursor: pointer;
+}
+.brands>div{
+    text-align: center;
+    font-size: 13px;
+    font-family: "Clear Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    padding: 2%;
+    border-radius: 5%;
+}
+.brands>div:hover{
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; 
+}
