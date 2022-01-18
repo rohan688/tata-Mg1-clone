@@ -3,6 +3,10 @@ body{
     padding: 0%;
     margin: 0%;
 }
+#carousel{
+    background: white;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
 .main_slider{
     display: flex;
 }
@@ -40,6 +44,7 @@ body{
     text-align: center;
     font-size: 30px;
     color: dimgray;
+    padding-bottom: 30px;
 }
 @media only screen and (min-width:375px) and (max-width:1000px){
     .main_slider{
@@ -53,5 +58,10 @@ body{
     }
     #below_slider_p{
         font-size: 20px;
+        padding-bottom: 10px;
     }
+}
+#careplan_img{
+    width: 90%;
+    margin: auto;
 }
