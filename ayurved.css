@@ -125,11 +125,15 @@ body{
 }
 #brands_head{
     font-size: 18px;
+    line-height: 26px;
+    font-weight: 400;
+    color: #212121;
+    font-style: normal;
     font-family: "Clear Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    margin-left: 90px;
+    margin-left: 49px;
     margin-top: 50px;
 }
-.proClass{
+.proClass,.pre_img{
     width: 150px;
     height: 150px;
 }
@@ -142,15 +146,17 @@ body{
 .proname{
     font-family: "Clear Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 14px;
+    line-height: 20px;
+    font-style: normal;
     color: #212121;
-    font-weight: 400; 
+    font-weight: 700; 
 }
 .quantity{
     font-family: "Clear Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 12px;
-    color: #757575;
+    color: #212121;
     font-weight: 400; 
-    line-height: 5px;
+    line-height: 17px;
 }
 .div5{
     background-color:#1aab2a;
@@ -197,13 +203,4 @@ body{
   
    
 }
-.pre_img{
-    height: 150px;
-    width: 80px;
-    margin-left: 30px;
-}
-*{
-    font-family: 'Helvetica Neue',
-               'Arial Nova',
-                sans-serif;
-}
+
