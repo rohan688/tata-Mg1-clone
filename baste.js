@@ -256,5 +256,6 @@ var mg_data=[
         localStorage.setItem('mg_base',JSON.stringify(data));
         window.location.href="productPage.html"
     }
+    
 
     
