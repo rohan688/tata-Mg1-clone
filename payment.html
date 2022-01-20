@@ -6,63 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>payment_page</title>
     <link rel="stylesheet" href="./styles/payment.css">
-    <style>
-        body{
-            font-family: "Clear Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;;
-        }
-        /* header */
-       #payment_header{
-           display: flex;
-           justify-content: space-between;
-           align-items: center;
-           background: white;
-       }
-       #payment_header>div>img:nth-child(2){
-           margin-left: 30px;
-           height: 60px;
-       }
-       /* footer */
-       #payment_footer{
-         display: flex;
-         width: 80%;
-         margin: auto;
-       }
-       #payment_footer>div{
-         border-top: 1px solid darkgray;
-         margin-right: 1%;
-       }
-       #payment_footer>div>p{
-           font-size: 10px;
-           color: darkgray;
-       }
-       #payment_footer>div>p>span{
-           color: lightsalmon;
-       }
-
-       /* payment_main */
-       #payment_main{
-           display: flex;
-           width: 80%;
-           margin: auto;
-           margin-top: 50px;
-           margin-bottom: 50px;
-       }
-       #payment_options{
-           background: oldlace;
-           width: 20%;
-           padding: 3%;
-       }
-        #payment_options>div{
-            display: flex;
-            font-size: 15px;
-            margin-bottom: 20px;
-            cursor: pointer;
-        }
-        #payment_options>div>p{
-            margin-left: 5%;
-        }
-
-    </style>
 </head>
 <body>
 
@@ -102,11 +45,117 @@
 
 
        <div id="card_details">
-         
+
+         <div>
+             <h5>Credit & Debit Cards</h5>
+             <p>Add New Card For Payment</p>
+         </div>
+
+         <div>
+             <p>Card Number</p>
+             <input id="card_num" type="text" maxlength="16" placeholder="xxxx xxxx xxxx xxxx">
+         </div>
+
+         <div id="date_code">
+            <div>
+                <p>Expiry Date (MM/YY)</p>
+                <input id="exp_date" type="month" placeholder=" MM / YY">
+            </div>
+
+            <div>
+                <p>Security code</p>
+                <input id="cvv" type="text" maxlength="3" placeholder="CVV">
+            </div>
+         </div>
+
+         <div>
+           <input id="card_name" type="text" placeholder="Name on card">
+         </div>
+
+         <div>
+            <input id="checkbox" type="checkbox">
+            <p>Your card details will be saved securely for future transactions, based on the industry standards.</p>
+         </div>
+
+         <div>
+            <button id="card_payment_btn">MAKE PAYMENT</button>
+         </div>
+
+         <div id="card_brands">
+           <p>We support domestic credit and debit cards of following brands</p>
+           <div>
+               <img src="https://res.cloudinary.com/du8msdgbj/image/upload/q_auto,f_auto/v1530098898/marketing/rv6lj5fubobesvsomlzr.png" alt="">
+               <img src="https://res.cloudinary.com/du8msdgbj/image/upload/q_auto,f_auto/v1532957968/marketing/j9kc0uquxwrcbyoeomfw.png" alt="">
+               <img src="https://res.cloudinary.com/du8msdgbj/image/upload/q_auto,f_auto/v1530098792/marketing/vujtyvkwxchd16egv0wt.png" alt="">
+               <img src="https://res.cloudinary.com/du8msdgbj/image/upload/q_auto,f_auto/v1530098811/marketing/szfylmvspyj5ccvhesnp.png" alt="">
+           </div>
+         </div>
+
        </div>
 
 
-       <div></div>
+       <div id="price_summary">
+
+           <div>
+             <p id="show_offers_first"><img src="https://res.cloudinary.com/du8msdgbj/image/upload/v1609235175/rwfhtgwtk8zmnbwdvfme.png" alt="">Pay with Paytm wallet on Tata 1mg for ₹999 or more and get 4000 cashback points.</p>
+             <p id="show_offers">SHOW ALL PAYMENT OFFERS <img  src="https://www.1mg.com/images/chevron_right_18.svg" alt=""></p>
+           </div>
+
+
+           <div id="mg_cash">
+             <div>
+                 <input type="checkbox" />
+                 <div>
+                     <p>Pay using 1mgCash</p>
+                     <p>₹ 75 of your order amount is eligible for payment through 1mgCash</p>
+                 </div>
+             </div>
+
+             <div>
+                 <p>Available balance: ₹75.0</p>
+                 <p>How 1mgCash works?</p>
+             </div>
+           </div>
+
+           <!-- dynamics part -->
+           <div id="mrp_summary">
+               <div>
+                   <p>Item Total(MRP)</p>
+                   <p id="total_mrp_item">₹1041.1</p>
+               </div>
+
+               <div>
+                <p>Price Discount</p>
+                <p id="discount_price">-₹491.68</p>
+               </div>
+
+               <div>
+                <p>Shipping Fee</p>
+                <p id="shipping_fee">₹45</p>
+               </div>
+
+               <div>
+                   <p>Want Free Shipping?</p>
+               </div>
+
+               <div>
+                <p>Safety Handling Feeⓘ</p>
+                <p>₹10</p>
+               </div>
+
+               <div>
+                <p>To be paid</p>
+                <p id="to_be_paid">₹604.42</p>
+               </div>
+
+               <div>
+                <p>Total Savings</p>
+                <p id="total_savings_amount">₹491.68</p>
+               </div>
+           </div>
+
+           <button id="main_card_payment_btn">MAKE PAYMENT</button>
+       </div>
 
     </div>
 
@@ -125,6 +174,6 @@
 
 </body>
 </html>
-<script>
 
-</script>
+
+<script src="./scripts/payment.js"></script>
