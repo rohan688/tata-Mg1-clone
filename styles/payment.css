@@ -186,6 +186,7 @@ height: 25px;
 }
 #mrp_summary>div:nth-child(4){
    color:#ff6f61 ;
+   cursor: pointer;
 }
 #mrp_summary>div:nth-child(6){
    color: darkslategray;
@@ -209,4 +210,5 @@ height: 25px;
    border-radius: 5px;
    border: none;
    height: 40px;
+   cursor: pointer;
 }
