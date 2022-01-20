@@ -9,6 +9,8 @@ body{
    justify-content: space-between;
    align-items: center;
    background: white;
+   padding-left: 2%;
+   padding-right: 2%;
 }
 #payment_header>div>img:nth-child(2){
    margin-left: 30px;
