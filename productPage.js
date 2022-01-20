@@ -86,7 +86,24 @@ add_cart.setAttribute("class","add_cart");
 
 document.querySelector("#image").append(pro_img);
 document.querySelector("#pro_detail").append(name,tata,rating_div);
-document.querySelector("#price_box").append(price_box_head ,price,care_price,care_div,include,quantity,add_cart)
+document.querySelector("#price_box").append(price_box_head ,price,care_price,care_div,include,quantity,add_cart);
 
+let data_send={
+    
+    name:ele.name,
+    quantity:ele.quantity,
+    mrp:ele.mrp,
+    discount:ele.discount,
+    price:ele.price
+    
+ }
+ 
+ add_cart.onclick=()=>{
+     cartsend(data_send)
+ } 
 });
  }
+ function cartsend(data){
+    localStorage.setItem('cart_data',JSON.stringify(data));
+    window.location.href="cart.html"
+}
