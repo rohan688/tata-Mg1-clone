@@ -104,8 +104,27 @@ var mg_data=[
     div1.append(img,name_div,quantity,rating_div,mrp,price);
     
     document.querySelector("#mg").append(div1);
-    });
-    }
+       
+    let data_send={
+        img:ele.image,
+        name:ele.name,
+        quantity:ele.quantity,
+        rating:ele.rating,
+        mrp:ele.mrp,
+        discount:ele.discount,
+        price:ele.price
+        
+     }
+     div1.onclick=()=>{
+         showproduct(data_send)
+     }
+     });
+     }
+     
+     function showproduct(data){
+         localStorage.setItem('mg_base',JSON.stringify(data));
+         window.location.href="productPage.html"
+     }
     
     // pre and prohibit suppliment
     var pre_data=[
@@ -214,5 +233,28 @@ var mg_data=[
     div1.append(img,name_div,quantity,rating_div,mrp,price);
     
     document.querySelector("#sup").append(div1);
+
+     
+    let data_send={
+       img:ele.image,
+       name:ele.name,
+       quantity:ele.quantity,
+       rating:ele.rating,
+       mrp:ele.mrp,
+       discount:ele.discount,
+       price:ele.price
+       
+    }
+    
+    div1.onclick=()=>{
+        showproduct(data_send)
+    }
     });
     }
+    
+    function showproduct(data){
+        localStorage.setItem('mg_base',JSON.stringify(data));
+        window.location.href="productPage.html"
+    }
+
+    
