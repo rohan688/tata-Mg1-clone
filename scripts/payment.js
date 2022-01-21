@@ -22,6 +22,7 @@ document.querySelector("#card_payment_btn").addEventListener("click",()=>{
        }
        if(flag==true){
            alert("payment Successfull");
+           window.location.href="thank_you.html";
        }
     })
 
@@ -49,5 +50,6 @@ document.querySelector("#card_payment_btn").addEventListener("click",()=>{
        }
        if(flag==true){
            alert("payment Successfull");
+           window.location.href="thank_you.html";
        }
     })
