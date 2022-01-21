@@ -14,7 +14,7 @@
     width: 75%;
     height: 100%;
   
-    margin-left: 5%;
+
 }
 #header{
     font-family: "Clear Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -144,4 +144,45 @@
     height: 150px;
     width: 80px;
     margin-left: 30px;
+}
+/* left filter */
+#left_header{
+    font-family: "Clear Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    color: #212121;
+    font-weight: 700;
+    margin-top: 20px;
+  
+}
+#search_brand{
+    height: 30px;
+    margin-left: 10px;
+}
+#brand_div{
+    width: 180px;
+    height: 250px;
+   
+    margin-left: 10px;
+    overflow: scroll;
+   
+}
+#brand_div_option{
+    font-family: "Clear Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    color: #212121;
+    font-weight: 400;
+   color: #666666;
+  
+}
+#brand_check{
+    background-color: #ff6f61;
+    border-color:#ff6f61 ;
+    width: 15px;
+    height: 15px;
+}
+#discount_div{
+    width: 180px;
+    height: 90px;
+    margin-left: 10px;
+    
 }

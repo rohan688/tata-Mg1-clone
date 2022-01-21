@@ -183,6 +183,7 @@ var mg_data=[
      div1.onclick=()=>{
          showproduct(data_send)
      }
+   
      });
      }
      
@@ -190,3 +191,91 @@ var mg_data=[
          localStorage.setItem('mg_base',JSON.stringify(data));
          window.location.href="productPage.html"
      }
+
+
+    //  filter low to bhigh price
+     document.querySelector(".low").addEventListener("click",function (){
+        sort_price(mg_data);
+    
+    })
+      function sort_price(mg_data){
+        document.querySelector("#all_products").innerHTML=null
+          mg_data.sort(function(a,b){
+              return Number(a.price)-Number(b.price);
+            //  console.log(a.price)
+          })
+          displaymg(mg_data); 
+      }  
+        
+   //filter high to low price
+      document.querySelector(".high").addEventListener("click",function (){
+        sort_price_high(mg_data);
+    
+    })
+      function sort_price_high(mg_data){
+        document.querySelector("#all_products").innerHTML=null
+          mg_data.sort(function(a,b){
+              return Number(b.price)-Number(a.price);
+            //  console.log(a.price)
+          })
+          displaymg(mg_data); 
+      }  
+       
+       //  filter low to bhigh discount
+     document.querySelector(".dis_low").addEventListener("click",function (){
+        sort_price(mg_data);
+    
+    })
+      function sort_price(mg_data){
+        document.querySelector("#all_products").innerHTML=null
+          mg_data.sort(function(a,b){
+              return Number(a.discount)-Number(b.discount);
+            //  console.log(a.price)
+          })
+          displaymg(mg_data); 
+      }  
+      //filter high to low discount
+      document.querySelector(".dis_high").addEventListener("click",function (){
+        sort_price_high(mg_data);
+    
+    })
+      function sort_price_high(mg_data){
+        document.querySelector("#all_products").innerHTML=null
+          mg_data.sort(function(a,b){
+              return Number(b.discount)-Number(a.discount);
+            //  console.log(a.price)
+          })
+          displaymg(mg_data); 
+      } 
+
+
+
+             //  filter low to bhigh rating
+     document.querySelector(".rating_low").addEventListener("click",function (){
+        sort_price(mg_data);
+    
+    })
+      function sort_price(mg_data){
+        document.querySelector("#all_products").innerHTML=null
+          mg_data.sort(function(a,b){
+              return Number(a.rating)-Number(b.rating);
+            //  console.log(a.price)
+          })
+          displaymg(mg_data); 
+      }  
+      //filter high to low rating
+      document.querySelector(".rating_high").addEventListener("click",function (){
+        sort_price_high(mg_data);
+    
+    })
+      function sort_price_high(mg_data){
+        document.querySelector("#all_products").innerHTML=null
+          mg_data.sort(function(a,b){
+              return Number(b.rating)-Number(a.rating);
+            //  console.log(a.price)
+          })
+          displaymg(mg_data); 
+      } 
+
+
+
