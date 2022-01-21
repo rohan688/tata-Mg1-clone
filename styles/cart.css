@@ -100,12 +100,14 @@ body{
   border: #fc6456 1px solid;
   border-radius: 50%;
   color: white;
+  cursor: pointer;
 }
 #minus {
   background: white;
   color: #fc6456;
   border: #fc6456 1px solid;
   border-radius: 50%;
+  cursor: pointer;
 }
 #del {
   border: none;
@@ -142,6 +144,7 @@ body{
   font-size: 18px;
   color: white;
   padding: 10px;
+  cursor: pointer;
 }
 #chkout:hover {
   background: #fc6456;
