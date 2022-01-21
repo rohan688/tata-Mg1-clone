@@ -75,3 +75,9 @@ if (cartItemsArr.length == 0) {
 document.getElementById("chkout").addEventListener("click", function () {
   window.location.href = "address.html";
 });
+document.querySelector("#mg_home").addEventListener("click",() => {
+  window.location.href="index.html";
+})
+document.querySelector("#need_help").addEventListener("click", () => {
+  window.location.href="NeedHelp.html";
+})
