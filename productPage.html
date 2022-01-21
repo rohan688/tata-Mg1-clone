@@ -5,7 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ProductPage</title>
-    <link rel="stylesheet" href="./productPage.css">
+    <link rel="stylesheet" href="styles/productPage.css">
+    <link rel="stylesheet" href="styles/footer.css">
 
 </head>
 <body>
@@ -31,7 +32,11 @@
     </div>
    </div>
     </div>
+    <div id="footer"></div>
 </body>
 </html>
-<script src="./productPage.js"></script>
->
+<script src="script/productPage.js"></script>
+<script type="module">
+    import footer from "./script/footer.js";
+    document.getElementById("footer").innerHTML=footer();
+    </script>

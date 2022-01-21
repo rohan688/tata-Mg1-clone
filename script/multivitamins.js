@@ -135,7 +135,7 @@ var mg_data=[
     img.setAttribute("src",ele.image);
     img.setAttribute("class","proClass")
     let name_div=document.createElement("div")
-    name_div.setAttribute("class","name_div");
+    name_div.setAttribute("class","name_pro_div");
     let name=document.createElement("h2");
     name.textContent=ele.name;
     name_div.append(name)
