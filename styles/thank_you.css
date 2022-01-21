@@ -28,6 +28,7 @@ button{
     border-radius: 20px;
     color: white;
     font-size: 13px;
+    cursor: pointer;
 }
 
 @media only screen and (min-width:375px) and (max-width:1000px){

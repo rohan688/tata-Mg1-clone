@@ -33,7 +33,7 @@ document.querySelector("#save_btn").addEventListener("click", (e) => {
         alert('Enter customer name');
         flag=false;
     }
-    if(number<10){
+    if(number.length<10){
         alert('Enter valid Mobile Number');
         flag=false;
     }
