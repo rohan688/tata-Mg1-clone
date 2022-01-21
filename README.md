@@ -38,5 +38,5 @@ This is a collaborative project. We have worked on this project and submitted it
     e-Mail:
     GitHub: https://github.com/rohan688 
   6. Soubhagya Samal
-    e-Mail:
-    GitHub:
+    e-Mail: rinkisoubhagyasamal118@gmail.com
+    GitHub: https://github.com/Soubhagya118
