@@ -1,0 +1,94 @@
+.cont {
+  display: flex;
+  justify-content: center;
+  width: 85%;
+  gap: 20px;
+  align-content: center;
+  align-items: center;
+  align-self: center;
+  justify-content: space-around;
+  margin: auto;
+}
+.box {
+  align-content: center;
+  justify-content: center;
+  justify-content: space-around;
+  margin: auto;
+}
+.thro {
+  display: flex;
+}
+
+.line {
+  font-family: "Clear Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #212121;
+}
+h3 {
+  font-family: "Clear Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 17px;
+  color: #757575;
+}
+.box > img {
+  width: 84px;
+  height: 143px;
+}
+.color {
+  font-family: "Clear Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 26px;
+  color: #212121;
+}
+.CardRatingDetail__ratings___1q8zc {
+  display: flex;
+}
+.CardRatingDetail__ratings-container___2ZTSK {
+  color: white;
+  font-family: "Clear Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 17px;
+  color: #ffffff;
+}
+.CardRatingDetail__ratings-header___2yyQW {
+  font-family: "Clear Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 17px;
+  color: rgba(0, 0, 0, 0.58);
+}
+.style__mrp-tag___3T8Mr,
+.style__strike-price___3Ag3J {
+  font-family: "Clear Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 17px;
+  color: #757575;
+}
+.style__discount-percent___1CBqr {
+  font-family: "Clear Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 17px;
+  color: #1aab2a;
+}
+.style__price___196ew {
+  font-family: "Clear Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 23px;
+  color: #212121;
+}

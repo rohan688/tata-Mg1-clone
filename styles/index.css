@@ -1,0 +1,110 @@
+body{
+    overflow-x: hidden;
+    padding: 0%;
+    margin: 0%;
+}
+#carousel{
+    background: white;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+.main_slider{
+    display: flex;
+}
+.slider{
+    content: url(../images/slider1.png);
+    width: 60%;
+    height: 280px;
+    overflow-x: hidden;
+    animation: slide 24s infinite;
+    cursor: pointer;
+}
+@keyframes slide{
+    20%{
+        content: url(../images/slider2.jpg);
+    }
+    40%{
+        content: url(../images/slider3.png);
+    }
+    60%{
+        content: url(../images/slider4.png);
+    }
+    80%{
+        content: url(../images/slider5.jpg);
+    }
+    100%{
+        content: url(../images/slider1.png);
+    }
+}
+.fixed_img{
+    width: 40%;
+    height: 280px;
+    cursor: pointer;
+}
+#below_slider_p{
+    text-align: center;
+    font-size: 30px;
+    color: dimgray;
+    padding-bottom: 30px;
+}
+@media only screen and (min-width:375px) and (max-width:1000px){
+    .main_slider{
+        display: block;
+    }
+    .slider{
+        width: 100%;
+    }
+    .fixed_img{
+        width: 100%;
+    }
+    #below_slider_p{
+        font-size: 20px;
+        padding-bottom: 10px;
+    }
+}
+#careplan_img{
+    width: 90%;
+    margin: auto;
+}
+#brands_text{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 2%;
+}
+#brands_text>p{
+    font-size: 18px;
+    font-family: "Clear Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+#brands_text>button{
+    width: 60px;
+    height: 30px;
+    background: coral;
+    color: white;
+    border: none;
+    border-radius: 5%;
+    font-size: 10px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.brands{
+    display: flex;
+    justify-content: space-around;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+   padding-left: 15%;
+   padding-right: 15%;
+}
+.brands>img{
+    cursor: pointer;
+}
+.brands>div{
+    text-align: center;
+    font-size: 13px;
+    font-family: "Clear Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    padding: 2%;
+    border-radius: 5%;
+    cursor: pointer;
+}
+.brands>div:hover{
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; 
+}
