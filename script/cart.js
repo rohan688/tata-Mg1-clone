@@ -68,7 +68,10 @@ if (cartItemsArr.length == 0) {
   document.getElementById("ttl_dsc1").textContent = total_discount;
   document.getElementById("ttl_dsc").textContent = total_discount;
   document.getElementById("ttl").textContent = total_d;
+  let price_arr = [];
+  price_arr.push(total_price, total_discount, total_d);
+  localStorage.setItem("price_data", JSON.stringify(price_arr));
 }
 document.getElementById("chkout").addEventListener("click", function () {
-  window.location.href = "";
+  window.location.href = "address.html";
 });
