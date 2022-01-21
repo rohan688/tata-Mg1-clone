@@ -1,7 +1,6 @@
 #main{
     width: 90%;
     height: 2300px;
-    border: solid 1px red;
     margin: auto;
     display: flex;
 }

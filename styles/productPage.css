@@ -6,6 +6,13 @@
     display: grid;
     grid-template-columns: repeat(3,1fr);
 }
+body{
+    background: whitesmoke;
+}
+#pro_info{
+    background: white;
+    margin-top: 30px;
+}
 #main>div{
 
  margin-left: 20px;
@@ -42,9 +49,9 @@ border-radius:10% ;
 #price_box{
     width: 100%;
     height: 300px;
-   
+   margin-top: 30px;
     border-radius:10px;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    background: white;
 }
 .price_head{
     font-family: "Clear Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;

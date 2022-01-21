@@ -5,11 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>NeedHelp</title>
+    <link rel="stylesheet" href="./styles/navbar.css">
+    <link rel="stylesheet" href="./styles/mdcn.css">
+    <link rel="stylesheet" href="./styles/footer.css">
     <link rel="stylesheet" href="./styles/NeedHelp.css" />
   </head>
   <body>
     <!-- navbar div -->
-    <div class="navbar_sec"></div>
+    <div id="navbar"></div>
     <!-- mainPage sec -->
     <div class="main_div_nh">
       <p>Need Help?</p>
@@ -71,7 +74,13 @@
       </div>
     </div>
     <!-- foter section -->
-    <div class="footer_sec_div"></div>
+    <div id="footer"></div>
   </body>
 </html>
 <script src="./script/NeedHelp.js"></script>
+<script type="module">
+  import footer from "./script/footer.js";
+  document.getElementById("footer").innerHTML=footer();
+  import navbar from "./script/navbar.js";
+  document.getElementById("navbar").innerHTML=navbar();
+  </script>
