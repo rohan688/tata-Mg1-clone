@@ -7,11 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AskDoctor</title>
     <link rel="stylesheet" href="./styles/AskDoctor.css">
+    <link rel="stylesheet" href="./styles/navbar.css">
+    <link rel="stylesheet" href="./styles/mdcn.css">
+    <link rel="stylesheet" href="./styles/footer.css">
 </head>
 
 <body>
     <!-- navbar_section -->
-    <div class='navbar_section'>
+    <div id='navbar'>
 
     </div>
     <div class='starting_consult_div'>
@@ -190,7 +193,7 @@
     </div>
 
     <!-- For footer Section -->
-    <div class='footer_section'>
+    <div id='footer'>
 
     </div>
 
@@ -199,3 +202,9 @@
 
 </html>
 <script src="./script/AskDoctor.js"></script>
+<script type="module">
+    import footer from "./script/footer.js";
+    document.getElementById("footer").innerHTML=footer();
+    import navbar from "./script/navbar.js";
+    document.getElementById("navbar").innerHTML=navbar();
+</script>
