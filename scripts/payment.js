@@ -53,3 +53,10 @@ document.querySelector("#card_payment_btn").addEventListener("click",()=>{
            window.location.href="thank_you.html";
        }
     })
+
+    document.querySelector("#mg_home").addEventListener("click",() => {
+        window.location.href="index.html";
+    })
+    document.querySelector("#need_help").addEventListener("click", () => {
+        window.location.href="NeedHelp.html";
+    })

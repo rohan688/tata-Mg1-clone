@@ -13,6 +13,12 @@ body{
    padding-right: 2%;
    height: 55px;
 }
+#mg_home{
+   cursor: pointer;
+}
+#need_help{
+   cursor: pointer;
+}
 #payment_header>div>img:nth-child(2){
    margin-left: 30px;
    height: 60px;
