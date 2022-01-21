@@ -1,0 +1,93 @@
+#empty_img {
+  width: 160px;
+}
+#add_medicines {
+  width: 150px;
+  background-color: #ff6f61;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  color: white;
+  padding: 10px;
+}
+#add_medicines:hover {
+  background: #fc6456;
+}
+#container {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  /* padding-left: 50px; */
+}
+#cart_items {
+  /* border: #fc6456 1px solid; */
+  width: 60%;
+  /* height: 100px; */
+  margin-right: 30px;
+  margin-left: 50px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+  padding: 20px;
+}
+#cart_total {
+  width: 40%;
+  /* border: springgreen 1px solid; */
+  /* height: 100px; */
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  padding: 20px;
+}
+#dsc_prc {
+  color: gray;
+  text-decoration: line-through;
+}
+#plus {
+  background: #fc6456;
+  border: #fc6456 1px solid;
+  border-radius: 50%;
+  color: white;
+}
+#minus {
+  background: white;
+  color: #fc6456;
+  border: #fc6456 1px solid;
+  border-radius: 50%;
+}
+#del {
+  border: none;
+  color: gray;
+  background: white;
+}
+.p_class {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+}
+#tbp {
+  font-size: 18px;
+  font-weight: bold;
+  color: gray;
+}
+#total_g {
+  background: #e4f6e7;
+  height: 40px;
+  align-items: center;
+  padding: 0% 5px;
+  border-radius: 5px;
+}
+#ttl_dsc {
+  color: #1aab2a;
+  font-weight: bolder;
+  font-size: 16px;
+}
+#chkout {
+  width: 100%;
+  background-color: #ff6f61;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  color: white;
+  padding: 10px;
+}
+#chkout:hover {
+  background: #fc6456;
+}
