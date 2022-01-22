@@ -24,60 +24,88 @@ if (cartItemsArr.length == 0) {
 } else {
   let a = document.getElementById("cart_items");
   let c = document.getElementById("cart_total");
+
   let total_price = 0;
   let total_discount = 0;
   let total_d = 0;
+  function displayArr(cartItemsArr) {
+    cartItemsArr.map((element) => {
+      let count = 1;
+      let b = document.createElement("div");
+      b.style.display = "flex";
+      let { name, quantity, mrp, price } = element;
+      let temp = document.createElement("div");
+      let temp1 = document.createElement("div");
+      temp.style.width = "50%";
+      temp1.style.width = "50%";
+      temp1.style.textAlign = "right";
+      let h2 = document.createElement("h3");
+      let price_h2 = document.createElement("h3");
+      let org_price = document.createElement("h5");
+      org_price.id = "dsc_prc";
+      let cnt = document.createElement("span");
+      let qty = document.createElement("p");
+      let plus = document.createElement("button");
+      let minus = document.createElement("button");
+      let del = document.createElement("button");
+      del.addEventListener("click", function (index) {
+        cartItemsArr.splice(index, 1);
+        // count--;
+        localStorage.setItem("cart_data", JSON.stringify(cartItemsArr));
+        displayArr(cartItemsArr);
+        location.reload();
+      });
+      plus.addEventListener("click", function () {
+        let arr = JSON.parse(localStorage.getItem("cart_data"));
+        count++;
+        price_h2.textContent = `Rs. ${+price * count}`;
+        cnt.textContent = count;
+        total_price = +price * count;
+        total_discount = +mrp * count;
+        // displayArr(cartItemsArr);
+        location.reload;
+      });
 
-  cartItemsArr.map((element) => {
-    let b = document.createElement("div");
-    b.style.display = "flex";
-    let { name, quantity, mrp, price } = element;
-    let temp = document.createElement("div");
-    let temp1 = document.createElement("div");
-    temp.style.width = "50%";
-    temp1.style.width = "50%";
-    temp1.style.textAlign = "right";
-    let h2 = document.createElement("h3");
-    let price_h2 = document.createElement("h3");
-    let org_price = document.createElement("h5");
-    org_price.id = "dsc_prc";
-    let qty = document.createElement("p");
-    let plus = document.createElement("button");
-    let minus = document.createElement("button");
-    let del = document.createElement("button");
-    plus.textContent = "+";
-    minus.textContent = "-";
-    plus.id = "plus";
-    minus.id = "minus";
-    del.id = "del";
-    del.textContent = "Remove";
-    price_h2.textContent = `₹  ${price}`;
-    org_price.textContent = `₹  ${mrp}`;
-    h2.textContent = name;
-    qty.textContent = quantity;
-    temp.append(h2, qty, del);
-    temp1.append(price_h2, org_price, minus, plus);
-    b.append(temp, temp1);
-    a.append(b);
 
-    total_price += +mrp;
-    total_discount += +price;
-  });
-  total_d = total_price - total_discount + 10;
-  document.getElementById("itm_total").textContent = total_price;
-  document.getElementById("ttl_dsc1").textContent = total_discount;
-  document.getElementById("ttl_dsc").textContent = total_discount;
-  document.getElementById("ttl").textContent = total_d;
-  let price_arr = [];
-  price_arr.push(total_price, total_discount, total_d);
-  localStorage.setItem("price_data", JSON.stringify(price_arr));
+      plus.textContent = "+";
+      minus.textContent = "-";
+      plus.id = "plus";
+      minus.id = "minus";
+      del.id = "del";
+      del.textContent = "Remove";
+      price_h2.textContent = `Rs. ${price}`;
+      org_price.textContent = `Rs. ${mrp}`;
+      h2.textContent = name;
+      qty.textContent = quantity;
+      temp.append(h2, qty, del);
+      temp1.append(price_h2, org_price);
+      b.append(temp, temp1);
+      a.append(b);
+
+
+      total_price += +mrp;
+      total_discount += +price;
+    });
+    total_d = total_discount + 10;
+    document.getElementById("itm_total").textContent = total_price;
+    document.getElementById("ttl_dsc1").textContent =
+      total_price - total_discount;
+    document.getElementById("ttl_dsc").textContent =
+      total_price - total_discount;
+    document.getElementById("ttl").textContent = total_d;
+    let price_arr = [];
+    price_arr.push(total_price, total_discount, total_d);
+    localStorage.setItem("price_data", JSON.stringify(price_arr));
+  }
 }
 document.getElementById("chkout").addEventListener("click", function () {
   window.location.href = "address.html";
 });
-document.querySelector("#mg_home").addEventListener("click",() => {
-  window.location.href="index.html";
-})
+document.querySelector("#mg_home").addEventListener("click", () => {
+  window.location.href = "index.html";
+});
 document.querySelector("#need_help").addEventListener("click", () => {
-  window.location.href="NeedHelp.html";
-})
+  window.location.href = "NeedHelp.html";
+});
+
+displayArr(cartItemsArr);
