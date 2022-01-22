@@ -39,11 +39,12 @@
     }#right_part div button{
         border: 1px solid orangered;
         border-radius: 5px;
-        margin-bottom: 15px;
+        margin-bottom: 15px;color: orangered;
         background-color: white;
+        width: 80%;margin-left: 20px;
     }#right_part div img{
         margin-top: 50px;
-        margin-left: 20px;
+        margin-left: 40px;
     }#second_div{
         background-color: white;
         
