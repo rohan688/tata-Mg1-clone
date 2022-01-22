@@ -145,7 +145,7 @@ function navbar() {
           </div>
           <div class="search_box">
               
-              <input type="text" class="search_input" placeholder="Search for Medicines and Health Products" id="search_input"/>
+              <input type="text" class="search_input" placeholder="Search for Medicines and Health Products" id="search_input" onkeypress="findme()"/>
               <span class="navigation_icon"><i class="fa fa-search"></i></span>
           </div>
       </div>

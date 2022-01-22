@@ -66,6 +66,7 @@ if (cartItemsArr.length == 0) {
         location.reload;
       });
 
+
       plus.textContent = "+";
       minus.textContent = "-";
       plus.id = "plus";
@@ -80,6 +81,7 @@ if (cartItemsArr.length == 0) {
       temp1.append(price_h2, org_price);
       b.append(temp, temp1);
       a.append(b);
+
 
       total_price += +mrp;
       total_discount += +price;
