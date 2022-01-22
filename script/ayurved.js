@@ -194,6 +194,8 @@ function displaypre(pre_data) {
     name.textContent = ele.name;
     name_div.append(name);
     name.setAttribute("class", "proname");
+
+    
     let quantity = document.createElement("p");
     quantity.textContent = ele.quantity;
     quantity.setAttribute("class", "quantity");
