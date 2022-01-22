@@ -1,3 +1,5 @@
+let empty_arr = [];
+localStorage.setItem("cart_data", JSON.stringify(empty_arr));
 let b = JSON.parse(localStorage.getItem("price_data"));
 console.log(b);
 let tbp = b[0] - b[1] + 45;
