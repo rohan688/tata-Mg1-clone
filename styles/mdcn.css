@@ -126,3 +126,9 @@
         color: orangered;
         padding-right: 5px;
     }
+    #middle_part{
+        font-family: "Clear Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;;
+    }
+    #paragraph_des{
+        margin-top: 300px;
+    }

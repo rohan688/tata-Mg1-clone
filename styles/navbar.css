@@ -433,7 +433,12 @@ background-color:rgb(255, 111, 97);
     font-weight: 700;
   }
 
-
+  #search_input{
+    outline: none;
+  }
+  .cities_input{
+    outline: none;
+  }
 
 
 
