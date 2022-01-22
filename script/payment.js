@@ -2,11 +2,13 @@ let empty_arr = [];
 localStorage.setItem("cart_data", JSON.stringify(empty_arr));
 let b = JSON.parse(localStorage.getItem("price_data"));
 console.log(b);
-let tbp = b[0] - b[1] + 45;
+let tbp = b[1] + 45;
 document.getElementById("total_mrp_item").textContent = `₹ ${b[0]}`;
-document.getElementById("discount_price").textContent = `-₹ ${b[1]}`;
+document.getElementById("discount_price").textContent = `-₹ ${b[0] - b[1]}`;
 document.getElementById("to_be_paid").textContent = `₹ ${tbp}`;
-document.getElementById("total_savings_amount").textContent = `₹ ${b[1]}`;
+document.getElementById("total_savings_amount").textContent = `₹ ${
+  b[0] - b[1]
+}`;
 document.querySelector("#card_payment_btn").addEventListener("click", () => {
   let flag = true;
   let card_number = document.querySelector("#card_num").value;
