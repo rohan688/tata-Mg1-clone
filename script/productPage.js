@@ -102,6 +102,6 @@ function cartsend(data) {
   var cart_arr = JSON.parse(localStorage.getItem("cart_data")) || [];
   cart_arr.push(data);
   localStorage.setItem("cart_data", JSON.stringify(cart_arr));
-  window.location.href = "cart.html";
+  alert('product added to cart successfully');
 }
 

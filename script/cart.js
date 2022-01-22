@@ -51,8 +51,8 @@ if (cartItemsArr.length == 0) {
     minus.id = "minus";
     del.id = "del";
     del.textContent = "Remove";
-    price_h2.textContent = `Rs. ${price}`;
-    org_price.textContent = `Rs. ${mrp}`;
+    price_h2.textContent = `₹  ${price}`;
+    org_price.textContent = `₹  ${mrp}`;
     h2.textContent = name;
     qty.textContent = quantity;
     temp.append(h2, qty, del);
