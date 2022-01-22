@@ -3,15 +3,19 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>careplan</title>
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css?family=Poppins"
     />
     <link rel="stylesheet" href="styles/careplan.css" />
+    <link rel="stylesheet" href="./styles/navbar.css">
+    <link rel="stylesheet" href="./styles/mdcn.css">
+    <link rel="stylesheet" href="./styles/footer.css">
   </head>
 
   <body>
+    <div id="navbar"></div>
     <img id="four" src="images/14.png" alt="" />
     <img id="five" src="images/15.png" alt="" />
     <img id="six" src="images/16.png" alt="" />
@@ -21,5 +25,12 @@
     <img id="ten" src="images/20.png" alt="" />
     <img id="eleven" src="images/21.png" alt="" />
     <!-- <img id="twelve" src="images/12.png" alt=""> -->
+    <div id="footer"></div>
   </body>
 </html>
+<script type="module">
+  import footer from "./script/footer.js";
+  document.getElementById("footer").innerHTML=footer();
+  import navbar from "./script/navbar.js";
+  document.getElementById("navbar").innerHTML=navbar();
+  </script>

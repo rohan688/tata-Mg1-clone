@@ -104,3 +104,4 @@ function cartsend(data) {
   localStorage.setItem("cart_data", JSON.stringify(cart_arr));
   window.location.href = "cart.html";
 }
+

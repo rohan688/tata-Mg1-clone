@@ -7,8 +7,13 @@
     <title>Online Pharmacy India | Buy Medicines from India's Trusted Medicine Store: 1mg.com</title>
     <!-- <link rel="stylesheet" href="./styles/index.css"> -->
     <link rel="stylesheet" href="styles/ayurved.css">
+    <link rel="stylesheet" href="./styles/navbar.css">
+    <link rel="stylesheet" href="./styles/mdcn.css">
+    <link rel="stylesheet" href="./styles/footer.css">
 </head>
 <body>
+
+    <div id="navbar"></div>
 
    <div id="carousel">
     <div class="main_slider">
@@ -24,43 +29,6 @@
        <img style="width: 100%;" src="https://onemg.gumlet.io/image/upload/v1638879520/ccdg5rr0hssuyw6nw27m.png" alt="">
    </div>
 
-      <!-- <div id="featured_brands">
-       <div id="brands_text">
-           <p>Featured brands</p>
-           <button>SEE ALL</button>
-       </div>
-       <div class="brands">
-           <div> -->
-              <!-- <img src="https://onemg.gumlet.io/image/upload/w_150,h_150,c_fit,a_ignore,q_auto,f_auto/v1642483570/a87zoae9ucbddlnfyiyz.png"/>
-              <p>Ensure</p>
-           </div>
-           <div>
-            <img src="https://onemg.gumlet.io/image/upload/w_150,h_150,c_fit,a_ignore,q_auto,f_auto/v1642483619/d3nz3wccu0bjk7cmnc1i.png"/>
-            <p>Sri Sri Tattva</p>
-           </div>
-<div>
-    <img src="https://onemg.gumlet.io/image/upload/w_150,h_150,c_fit,a_ignore,q_auto,f_auto/v1642393939/y3hkpunhl41mvanwjczo.png"/>
-    <p>Jiva Ayurveda</p>
-   </div>
-   <div>
-    <img src="https://onemg.gumlet.io/image/upload/w_150,h_150,c_fit,a_ignore,q_auto,f_auto/v1642483694/qmwcgxvspu1zy843byag.png"/>
-    <p>Protinex</p>
-   </div>
-   <div>
-    <img src="https://onemg.gumlet.io/image/upload/w_150,h_150,c_fit,a_ignore,q_auto,f_auto/v1642484127/x8ot2jnqbnxfu1gfyhkw.png"/>
-    <p>Himalaya</p>
-   </div>
-   <div>
-    <img src="https://onemg.gumlet.io/image/upload/w_150,h_150,c_fit,a_ignore,q_auto,f_auto/v1642484396/r2xbjoc6pnai6dp7z8pa.png"/>
-    <p>Accu-Chek</p>
-   </div>
-   <div>
-    <img src="https://onemg.gumlet.io/image/upload/w_150,h_150,c_fit,a_ignore,q_auto,f_auto/v1642484604/dh82cgj8lc6cbyl0jcqs.png"/>
-    <p>Colgate</p>
-   </div>
-     <img src="https://www.1mg.com/images/next-round.svg" alt="">
-</div>
-</div> -->
 <p id="brands_head">Featured Herbs</p>
 <div id="mg"></div>
 <p id="brands_head">Digestive Care</p>
@@ -99,6 +67,7 @@
 <div id="sup"></div>
 
 </div>
+<div id="footer"></div>
 
 
 
@@ -106,3 +75,9 @@
 </html>
 </html>
 <script src="script/ayurved.js"></script>
+<script type="module">
+    import footer from "./script/footer.js";
+    document.getElementById("footer").innerHTML=footer();
+    import navbar from "./script/navbar.js";
+    document.getElementById("navbar").innerHTML=navbar();
+    </script>

@@ -6,8 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>1mg Coupons</title>
     <link rel="stylesheet" href="./styles/offers.css">
+    <link rel="stylesheet" href="./styles/navbar.css">
+    <link rel="stylesheet" href="./styles/mdcn.css">
+    <link rel="stylesheet" href="./styles/footer.css">
 </head>
 <body>
+    <div id="navbar"></div>
     <div id="main_offers_box">
         <div id="offers_name">
            <div>Care Plan Offers</div>
@@ -198,5 +202,13 @@
            
         </div>
     </div>
+    <div id="footer"></div>
 </body>
 </html>
+<script type="module">
+    import footer from "./script/footer.js";
+    document.getElementById("footer").innerHTML=footer();
+    import navbar from "./script/navbar.js";
+    document.getElementById("navbar").innerHTML=navbar();
+    </script>
+

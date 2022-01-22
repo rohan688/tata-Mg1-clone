@@ -7,9 +7,13 @@
     <title>ProductPage</title>
     <link rel="stylesheet" href="styles/productPage.css">
     <link rel="stylesheet" href="styles/footer.css">
+    <link rel="stylesheet" href="./styles/navbar.css">
+    <link rel="stylesheet" href="./styles/mdcn.css">
+    <link rel="stylesheet" href="./styles/footer.css">
 
 </head>
 <body>
+    <div id="navbar"></div>
     <div id="main">
    <div id="image"></div>
    <div id="pro_info">
@@ -39,4 +43,6 @@
 <script type="module">
     import footer from "./script/footer.js";
     document.getElementById("footer").innerHTML=footer();
+    import navbar from "./script/navbar.js";
+    document.getElementById("navbar").innerHTML=navbar();
     </script>

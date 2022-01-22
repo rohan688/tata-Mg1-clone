@@ -14,6 +14,12 @@
     width: 100%;
     border-bottom: 1px solid #f1f4f6;;
 }
+.help{
+  cursor: pointer;
+}
+.offers{
+  cursor: pointer;
+}
 
 .header_first_row_first_section{
     width: 70%;
@@ -40,6 +46,7 @@
     font-weight: 600;
     font-size: 16px;
     color: #212121;
+    cursor: pointer;
 }
 
 .text_inside_first_header_row:hover{
@@ -48,12 +55,14 @@
 
 .logo_image{
     height: 34px;
+    cursor: pointer;
 }
 
 .cart_icon{
     background: url(https://res.cloudinary.com/du8msdgbj/image/upload/v1570101941/cart-icon-rebrand_vp4k0f.svg) no-repeat;
     width: 23px;
     height: 23px;
+    cursor: pointer;
 }
 
 .city_list{
@@ -153,6 +162,7 @@ background-color:rgb(255, 111, 97);
  color: #f1f4f6;
  font-weight: 500;
  font-size: 16px;
+ cursor: pointer;
 }
 
 .header_third_row{
@@ -199,6 +209,7 @@ background-color:rgb(255, 111, 97);
     border-radius: 0 0 3px 3px;
     min-width: 200px;
     white-space: nowrap;
+    cursor: pointer;
     
 }
 
@@ -231,6 +242,7 @@ background-color:rgb(255, 111, 97);
    color: #212121;
    padding-bottom: px;
    font-size: 13.5px;
+   cursor: pointer;
 }
 .dropdown_second_heading:hover{
     color:#ff6f61
