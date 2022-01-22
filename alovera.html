@@ -7,6 +7,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="./style/mdcn.css">
     <link rel="stylesheet" href="./style/navbar.css">
+    <link rel="stylesheet" href="./style/footer.css">
     <script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" data-auto-replace-svg="nest"></script>
 </head>
 <body>
@@ -434,5 +435,12 @@
         </div>
         </div>
     </div>
+    <div id="ftr"></div>
 </body>
 </html>
+<script type="module">
+    import footer from './scriptts/footer.js'
+    
+    let ftr_part=document.getElementById("ftr");
+    ftr_part.innerHTML = footer();
+    </script>
