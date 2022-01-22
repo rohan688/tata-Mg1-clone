@@ -108,6 +108,7 @@ body{
   border: #fc6456 1px solid;
   border-radius: 50%;
   cursor: pointer;
+  margin-right: 5px;
 }
 #del {
   border: none;
