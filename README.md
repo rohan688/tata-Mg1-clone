@@ -24,22 +24,23 @@ This is a collaborative project. We have worked on this project and submitted it
 
 :star:***Team_Members:***:star: 
   >1. Aman Raj
-   >    - e-Mail:
+   >    - e-Mail: ar7009297@gmail.com
    >    - GitHub: https://github.com/aman-638 
   >2. Chaitanya Makala
    >    - e-Mail: chaitanya.m.1996@gmail.com
    >    - GitHub: https://github.com/chaitanya-makala 
   >3. Kushagra Kamal
-   >    - e-Mail:
+   >    - e-Mail: kushagrakamal98@gmail.com
    >    - GitHub: https://github.com/kushagra-01 
   >4. Niranjan Kumar. M
-   >    - e-Mail:
+   >    - e-Mail: mailto:narayana9492324464@gmail.com
    >    - GitHub: https://github.com/Niru-496 
   >5. Rohan Ravindra Gaikwad
-   >    - e-Mail:
+   >    - e-Mail: 
    >    - GitHub: https://github.com/rohan688 
   >6. Soubhagya Samal
-   >    - e-Mail:
-   >    - GitHub:
+   >    - e-Mail: rinkisoubhagyasamal118@gmail.com
+   >    - GitHub: https://github.com/Soubhagya118
+
 
 
