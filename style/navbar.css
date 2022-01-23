@@ -419,7 +419,9 @@ background-color:rgb(255, 111, 97);
     font-weight: 700;
   }
 
-
+ul{
+  list-style: none;
+}
 
 
 
