@@ -10,7 +10,7 @@ const productSchema = new mongoose.Schema(
      package_type:{type:String,required:true},
      dis_percentage:{type:Number,required:true},
      category:{type:String,required:true},
-     prd_highlight:[{type:String,required:true}]
+     prd_highlight:{type:String,required:true}
     },
     {
       versionKey:false,

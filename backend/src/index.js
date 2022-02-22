@@ -1,11 +1,15 @@
 const express=require("express");
 
+const cors = require("cors");
+
 const connect = require("./confige/db");
 
 const productController=require("./controllers/product.controller");
 
 
 const app = express();
+
+app.use(cors());
 
 app.use(express.json());
 

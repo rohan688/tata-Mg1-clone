@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product_Entry</title>
+    <style>
+      
+    </style>
+</head>
+<body>
+    
+        <label for="">Product_name</label><br><br>
+        <input type="text" id="prd_name"><br><br>
+        <label for="">Product_image</label><br><br>
+        <input type="text" id="prd_img"><br><br>
+        <label for="">rating</label><br><br>
+        <input type="text" id="rating"><br><br>
+        <label for="">price</label><br><br>
+        <input type="text" id="price"><br><br>
+        <label for="">discount_price</label><br><br>
+        <input type="text" id="dis_price"><br><br>
+        <label for="">package_type</label><br><br>
+        <input type="text" id="pck_type"><br><br>
+        <label for="">discount_percentage</label><br><br>
+        <input type="text" id="dis_perc"><br><br>
+        <label for="">category</label><br><br>
+        <input type="text" id="category"><br><br>
+        <label for="">Product_highlight</label><br><br>
+        <input type="text" id="prd_highlight"><br><br>
+        <button id="btn" onclick="productpost()">Submit</button>
+   
+</body>
+</html>
+
+<script>
+    product();
+    async function product(){
+      try{
+          let res = await fetch("http://localhost:2222/products");
+          let data = await res.json();
+          console.log(data);
+      }catch(err){
+          console.log(err);
+      }
+    }
+
+    //postrequest
+    async function productpost(){
+       
+      try{
+        let prd_body={
+        prd_name:document.querySelector("#prd_name").value,
+        prd_img:document.querySelector("#prd_img").value,
+        rating:document.querySelector("#rating").value,
+        price:document.querySelector("#price").value,
+        dis_price:document.querySelector("#dis_price").value,
+        package_type:document.querySelector("#pck_type").value,
+        dis_percentage:document.querySelector("#dis_perc").value,
+        category:document.querySelector("#category").value,
+        prd_highlight:document.querySelector("#prd_highlight").value
+    }
+          let res = await fetch("http://localhost:2222/products",{
+              method:"POST",
+              body:JSON.stringify(prd_body),
+              headers:{"Content-type":"application/json"}
+          });
+          let data = await res.json();
+          console.log(data);
+      }catch(err){
+          console.log(err);
+      }
+    }
+
+</script>
