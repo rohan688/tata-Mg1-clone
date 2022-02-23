@@ -11,6 +11,9 @@
 </head>
 <body>
     
+ <div>
+    <div>
+        <h1>Post Product</h1>
         <label for="">Product_name</label><br><br>
         <input type="text" id="prd_name"><br><br>
         <label for="">Product_image</label><br><br>
@@ -19,7 +22,7 @@
         <input type="text" id="rating"><br><br>
         <label for="">price</label><br><br>
         <input type="text" id="price"><br><br>
-        <label for="">discount_price</label><br><br>
+        <label for="">Afterdiscount_price</label><br><br>
         <input type="text" id="dis_price"><br><br>
         <label for="">package_type</label><br><br>
         <input type="text" id="pck_type"><br><br>
@@ -30,21 +33,62 @@
         <label for="">Product_highlight</label><br><br>
         <input type="text" id="prd_highlight"><br><br>
         <button id="btn" onclick="productpost()">Submit</button>
-   
+       </div>
+
+       <div>
+        <h1>Update Product</h1>
+        <label for="">Product_name</label><br><br>
+        <input type="text" id="prd_name"><br><br>
+        <label for="">Product_image</label><br><br>
+        <input type="text" id="prd_img"><br><br>
+        <label for="">rating</label><br><br>
+        <input type="text" id="rating"><br><br>
+        <label for="">price</label><br><br>
+        <input type="text" id="price"><br><br>
+        <label for="">Afterdiscount_price</label><br><br>
+        <input type="text" id="dis_price"><br><br>
+        <label for="">package_type</label><br><br>
+        <input type="text" id="pck_type"><br><br>
+        <label for="">discount_percentage</label><br><br>
+        <input type="text" id="dis_perc"><br><br>
+        <label for="">category</label><br><br>
+        <input type="text" id="category"><br><br>
+        <label for="">Product_highlight</label><br><br>
+        <input type="text" id="prd_highlight"><br><br>
+        <button id="btn" onclick="updateProduct()">Submit</button>
+       </div>
+
+            
+        <div>
+             <h1>Delete Product</h1>
+          
+            <input type="text" id="delete_id" placeholder="Enter id to Delete" /></br></br>
+          
+            <button onclick="deleteProduct()">Delete Product</button>
+        </div>
+
+        
+ </div>
+
+ <h1>ALL PRODUCTS DATA</h1>
+ <div id="display">
+
+ </div>
+
 </body>
 </html>
 
 <script>
-    product();
-    async function product(){
-      try{
-          let res = await fetch("http://localhost:2222/products");
-          let data = await res.json();
-          console.log(data);
-      }catch(err){
-          console.log(err);
-      }
-    }
+    // product();
+    // async function product(){
+    //   try{
+    //       let res = await fetch("http://localhost:2222/products");
+    //       let data = await res.json();
+    //       console.log(data);
+    //   }catch(err){
+    //       console.log(err);
+    //   }
+    // }
 
     //postrequest
     async function productpost(){
@@ -72,5 +116,87 @@
           console.log(err);
       }
     }
+
+
+    async function deleteProduct(){
+   try{
+    let id =document.getElementById('delete_id').value
+
+    let response =await fetch(`http://localhost:2222/products/${id}`,{
+        method:"DELETE",
+        headers:{
+            "Content-Type":'application/json'
+        }
+    })
+
+    let d=await response.json()
+    console.log(d);
+   }catch(err){
+       consoel.log(err);
+   }
+  }
+
+
+
+  async function updateProduct(){
+       //1.url 2.body 3.headers
+    try{
+        let  data = {
+           id:document.getElementById('u_id').value,
+           name:document.getElementById('u_name').value,
+           price:document.getElementById('u_price').value
+       }
+       data = JSON.stringify(data)
+       
+       let id =document.getElementById('u_id').value
+
+       let response = await fetch(`http://localhost:2222/products/${id}`,{
+           method:'PUT',
+           body:data,
+           headers:{
+               "Content-Type":'application/json'
+           }
+       })
+
+       let datas =await response.json()
+       console.log(datas);
+    }catch(err){
+       console.log("err:",err);
+      }
+    }
+
+
+
+ display();
+let box=document.querySelector("#display");
+  async function display(){
+     try{
+       let res=await fetch(`http://127.0.0.1:3000/api/products`);
+       let data=await res.json();
+       append(data);
+       console.log(data);
+     }catch(err){
+       console.log(err);
+     }
+  }
+
+  function append(data){
+    box.innerText="";
+    data.map((data) => {
+      let div=document.createElement('div');
+
+      let id=document.createElement('p');
+      id.innerText="ID - "+data.id;
+
+      let name=document.createElement('p');
+      name.innerText="Name - "+data.name;
+
+      let price=document.createElement('p');
+      price.innerText="Price - "+data.price;
+
+      div.append(id,name,price);
+      box.append(div);
+    })
+  }
 
 </script>
