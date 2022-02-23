@@ -37,25 +37,29 @@
 
        <div>
         <h1>Update Product</h1>
+
+        <label for="">Product_ID</label><br><br>
+        <input type="text" id="u_id"><br><br>
         <label for="">Product_name</label><br><br>
-        <input type="text" id="prd_name"><br><br>
+        <input type="text" id="u_prd_name"><br><br>
         <label for="">Product_image</label><br><br>
-        <input type="text" id="prd_img"><br><br>
+        <input type="text" id="u_prd_img"><br><br>
         <label for="">rating</label><br><br>
-        <input type="text" id="rating"><br><br>
+        <input type="text" id="u_rating"><br><br>
         <label for="">price</label><br><br>
-        <input type="text" id="price"><br><br>
+        <input type="text" id="u_price"><br><br>
         <label for="">Afterdiscount_price</label><br><br>
-        <input type="text" id="dis_price"><br><br>
+        <input type="text" id="u_dis_price"><br><br>
         <label for="">package_type</label><br><br>
-        <input type="text" id="pck_type"><br><br>
+        <input type="text" id="u_pck_type"><br><br>
         <label for="">discount_percentage</label><br><br>
-        <input type="text" id="dis_perc"><br><br>
+        <input type="text" id="u_dis_perc"><br><br>
         <label for="">category</label><br><br>
-        <input type="text" id="category"><br><br>
+        <input type="text" id="u_category"><br><br>
         <label for="">Product_highlight</label><br><br>
-        <input type="text" id="prd_highlight"><br><br>
-        <button id="btn" onclick="updateProduct()">Submit</button>
+        <input type="text" id="u_prd_highlight"><br><br>
+        <button id="btn" onclick="updateProduct()">Update</button>
+
        </div>
 
             
@@ -64,7 +68,9 @@
           
             <input type="text" id="delete_id" placeholder="Enter id to Delete" /></br></br>
           
-            <button onclick="deleteProduct()">Delete Product</button>
+
+            <button onclick="deleteProduct()">Delete</button>
+
         </div>
 
         
@@ -95,13 +101,14 @@
        
       try{
         let prd_body={
-        prd_name:document.querySelector("#prd_name").value,
-        prd_img:document.querySelector("#prd_img").value,
+
+        name:document.querySelector("#prd_name").value,
+        image:document.querySelector("#prd_img").value,
         rating:document.querySelector("#rating").value,
-        price:document.querySelector("#price").value,
-        dis_price:document.querySelector("#dis_price").value,
-        package_type:document.querySelector("#pck_type").value,
-        dis_percentage:document.querySelector("#dis_perc").value,
+        mrp:document.querySelector("#price").value,
+        price:document.querySelector("#dis_price").value,
+        quantity:document.querySelector("#pck_type").value,
+        discount:document.querySelector("#dis_perc").value,
         category:document.querySelector("#category").value,
         prd_highlight:document.querySelector("#prd_highlight").value
     }
@@ -142,16 +149,25 @@
        //1.url 2.body 3.headers
     try{
         let  data = {
-           id:document.getElementById('u_id').value,
-           name:document.getElementById('u_name').value,
-           price:document.getElementById('u_price').value
+
+        name:document.querySelector("#prd_name").value,
+        image:document.querySelector("#prd_img").value,
+        rating:document.querySelector("#rating").value,
+        mrp:document.querySelector("#price").value,
+        price:document.querySelector("#dis_price").value,
+        quantity:document.querySelector("#pck_type").value,
+        discount:document.querySelector("#dis_perc").value,
+        category:document.querySelector("#category").value,
+        prd_highlight:document.querySelector("#prd_highlight").value
+
        }
        data = JSON.stringify(data)
        
        let id =document.getElementById('u_id').value
 
        let response = await fetch(`http://localhost:2222/products/${id}`,{
-           method:'PUT',
+
+           method:'PATCH',
            body:data,
            headers:{
                "Content-Type":'application/json'
@@ -171,7 +187,8 @@
 let box=document.querySelector("#display");
   async function display(){
      try{
-       let res=await fetch(`http://127.0.0.1:3000/api/products`);
+
+       let res=await fetch(`http://localhost:2222/products`);
        let data=await res.json();
        append(data);
        console.log(data);
@@ -186,13 +203,37 @@ let box=document.querySelector("#display");
       let div=document.createElement('div');
 
       let id=document.createElement('p');
-      id.innerText="ID - "+data.id;
+
+      id.innerText="ID - "+data._id;
+
 
       let name=document.createElement('p');
       name.innerText="Name - "+data.name;
 
       let price=document.createElement('p');
-      price.innerText="Price - "+data.price;
+
+      price.innerText="After_discountPrice - "+data.price;
+
+      let mrp=document.createElement('p');
+      mrp.innerText="mrp - "+data.mrp;
+
+      let image=document.createElement('p');
+      image.innerText="Image url - "+data.image;
+
+      let rating=document.createElement('p');
+      rating.innerText="rating - "+data.rating;
+
+      let quantity=document.createElement('p');
+      quantity.innerText="package_type - "+data.quantity;
+
+      let discount_percentage=document.createElement('p');
+      discount_percentage.innerText="discount_percentage - "+data.discount;
+
+      let category=document.createElement('p');
+      category.innerText="category - "+data.category;
+
+      let prd_highlight=document.createElement('p');
+      prd_highlight.innerText="prd_highlight - "+data.prd_highlight;
 
       div.append(id,name,price);
       box.append(div);
