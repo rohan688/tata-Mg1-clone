@@ -33,4 +33,25 @@ router.get("", async (req,res) => {
     } 
 });
 
+router.delete("/:id",async (req,res) => {
+  try{
+      const product = await Product.findByIdAndDelete(req.params.id,req.body).lean().exec();
+      return res.send(product);
+  }catch(err){
+      return res.send(err.message);
+  }
+});
+
+router.patch("/:id",async (req,res) => {
+  try{
+      const product = await Product.findByIdAndUpdate(req.params.id,req.body,{
+          new:true,
+      }).lean().exec();
+        return res.send(product);
+  }catch(err){
+      return res.send(err.message);
+  }
+});
+
+
 module.exports=router;

@@ -6,12 +6,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Product_Entry</title>
     <style>
-      
+      #container{
+          display: flex;
+          margin-left: 20px;
+      }
+      #container>div{
+          margin-left: 50px;
+      }
+      #display>div{
+          width: 95%;
+          margin: auto;
+         background: lightskyblue;
+         margin-top: 10px;
+         border: indianred 2px solid;
+         padding: 10px;
+      }
+      #display>div>p{
+        word-wrap: break-word;
+      }
     </style>
 </head>
 <body>
     
- <div>
+ <div id="container">
     <div>
         <h1>Post Product</h1>
         <label for="">Product_name</label><br><br>
@@ -65,7 +82,7 @@
             
         <div>
              <h1>Delete Product</h1>
-          
+             <label for="">Product_ID</label><br><br>
             <input type="text" id="delete_id" placeholder="Enter id to Delete" /></br></br>
           
 
@@ -150,15 +167,15 @@
     try{
         let  data = {
 
-        name:document.querySelector("#prd_name").value,
-        image:document.querySelector("#prd_img").value,
-        rating:document.querySelector("#rating").value,
-        mrp:document.querySelector("#price").value,
-        price:document.querySelector("#dis_price").value,
-        quantity:document.querySelector("#pck_type").value,
-        discount:document.querySelector("#dis_perc").value,
-        category:document.querySelector("#category").value,
-        prd_highlight:document.querySelector("#prd_highlight").value
+        name:document.querySelector("#u_prd_name").value,
+        image:document.querySelector("#u_prd_img").value,
+        rating:document.querySelector("#u_rating").value,
+        mrp:document.querySelector("#u_price").value,
+        price:document.querySelector("#u_dis_price").value,
+        quantity:document.querySelector("#u_pck_type").value,
+        discount:document.querySelector("#u_dis_perc").value,
+        category:document.querySelector("#u_category").value,
+        prd_highlight:document.querySelector("#u_prd_highlight").value
 
        }
        data = JSON.stringify(data)
@@ -183,7 +200,7 @@
 
 
 
- display();
+display();
 let box=document.querySelector("#display");
   async function display(){
      try{
@@ -235,7 +252,7 @@ let box=document.querySelector("#display");
       let prd_highlight=document.createElement('p');
       prd_highlight.innerText="prd_highlight - "+data.prd_highlight;
 
-      div.append(id,name,price);
+      div.append(id,name,price,mrp,image,rating,quantity,discount_percentage,category,prd_highlight);
       box.append(div);
     })
   }
