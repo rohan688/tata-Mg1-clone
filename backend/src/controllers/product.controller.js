@@ -33,6 +33,49 @@ router.get("", async (req,res) => {
     } 
 });
 
+router.get("/Multivitamins", async (req,res) => {
+  try{
+      const page = req.query.page || 1;
+      const size = req.query.size || 10;
+      const product=await Product.find({'category':"Multivitamins"})
+      .skip((page -1)*size)
+      .limit(size)
+      .lean().exec();
+      return res.send(product);
+  }catch(err){
+    return res.send(err.message);
+  } 
+});
+
+
+router.get("/Vitamins A-Z", async (req,res) => {
+  try{
+      const page = req.query.page || 1;
+      const size = req.query.size || 10;
+      const product=await Product.find({'category':"Vitamins A-Z"})
+      .skip((page -1)*size)
+      .limit(size)
+      .lean().exec();
+      return res.send(product);
+  }catch(err){
+    return res.send(err.message);
+  } 
+});
+
+router.get("/Mineral Supplements", async (req,res) => {
+  try{
+      const page = req.query.page || 1;
+      const size = req.query.size || 10;
+      const product=await Product.find({'category':"Mineral Supplements"})
+      .skip((page -1)*size)
+      .limit(size)
+      .lean().exec();
+      return res.send(product);
+  }catch(err){
+    return res.send(err.message);
+  } 
+});
+
 router.delete("/:id",async (req,res) => {
   try{
       const product = await Product.findByIdAndDelete(req.params.id,req.body).lean().exec();
