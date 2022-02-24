@@ -47,6 +47,20 @@ router.get("/Multivitamins", async (req,res) => {
   } 
 });
 
+router.get("/ayurved", async (req,res) => {
+  try{
+      const page = req.query.page || 1;
+      const size = req.query.size || 100;
+      const product=await Product.find({'category':"ayurved"})
+      .skip((page -1)*size)
+      .limit(size)
+      .lean().exec();
+      return res.send(product);
+  }catch(err){
+    return res.send(err.message);
+  } 
+});
+
 
 router.get("/Mineral Supplements", async (req,res) => {
   try{
