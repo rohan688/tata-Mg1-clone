@@ -8,6 +8,9 @@ document.querySelector("#save_btn").addEventListener("click", (e) => {
     let state=document.querySelector("#state").value;
     let customer_name=document.querySelector("#name").value;
     let number=document.querySelector("#mobile").value;
+    
+    
+    
 
     if(building==""){
         alert('Enter Flat Number,Building Name,Street/Locality');
