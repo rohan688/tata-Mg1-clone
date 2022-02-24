@@ -16,7 +16,7 @@ router.post("", async (req,res) => {
 router.get("", async (req,res) => {
     try{
         const page = req.query.page || 1;
-        const size = req.query.size || 10;
+        const size = req.query.size || 100;
         const product=await Product.find()
         .skip((page -1)*size)
         .limit(size)
@@ -36,7 +36,7 @@ router.get("", async (req,res) => {
 router.get("/Multivitamins", async (req,res) => {
   try{
       const page = req.query.page || 1;
-      const size = req.query.size || 10;
+      const size = req.query.size || 100;
       const product=await Product.find({'category':"Multivitamins"})
       .skip((page -1)*size)
       .limit(size)
@@ -51,7 +51,7 @@ router.get("/Multivitamins", async (req,res) => {
 router.get("/Vitamins A-Z", async (req,res) => {
   try{
       const page = req.query.page || 1;
-      const size = req.query.size || 10;
+      const size = req.query.size || 100;
       const product=await Product.find({'category':"Vitamins A-Z"})
       .skip((page -1)*size)
       .limit(size)
@@ -65,7 +65,7 @@ router.get("/Vitamins A-Z", async (req,res) => {
 router.get("/Mineral Supplements", async (req,res) => {
   try{
       const page = req.query.page || 1;
-      const size = req.query.size || 10;
+      const size = req.query.size || 100;
       const product=await Product.find({'category':"Mineral Supplements"})
       .skip((page -1)*size)
       .limit(size)
