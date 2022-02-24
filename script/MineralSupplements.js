@@ -132,7 +132,7 @@ multi();
 async function multi(){
   try{
       
-       let res= await fetch("https://tata1mg.herokuapp.com/products/Multivitamins")
+       let res= await fetch("https://tata1mg.herokuapp.com/products/MineralSupplements")
 
        let data= await res.json();
        console.log(data)
