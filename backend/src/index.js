@@ -15,8 +15,17 @@ app.use(express.json());
 
 app.use("/products",productController);
 
+app.get("/", async(req, res)=>{
+  try{
+    return res.send("your server is live on heroku")
+  }
+  catch(err){
+    return res.send(err.message);
+  }
+})
 
-app.listen(2222, async () => {
+const port = process.env.PORT || 2222;
+app.listen(port, async () => {
     try{
         await connect();
         console.log("listening on port 2222");
