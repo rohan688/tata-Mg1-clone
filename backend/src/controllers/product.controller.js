@@ -48,11 +48,11 @@ router.get("/Multivitamins", async (req,res) => {
 });
 
 
-router.get("/Vitamins A-Z", async (req,res) => {
+router.get("/Mineral Supplements", async (req,res) => {
   try{
       const page = req.query.page || 1;
       const size = req.query.size || 100;
-      const product=await Product.find({'category':"Vitamins A-Z"})
+      const product=await Product.find({'category':"Mineral Supplements"})
       .skip((page -1)*size)
       .limit(size)
       .lean().exec();
@@ -62,11 +62,11 @@ router.get("/Vitamins A-Z", async (req,res) => {
   } 
 });
 
-router.get("/Mineral Supplements", async (req,res) => {
+router.get("/Vitamins", async (req,res) => {
   try{
       const page = req.query.page || 1;
       const size = req.query.size || 100;
-      const product=await Product.find({'category':"Mineral Supplements"})
+      const product=await Product.find({'category':">Vitamins"})
       .skip((page -1)*size)
       .limit(size)
       .lean().exec();
