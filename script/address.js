@@ -23,7 +23,7 @@ document.querySelector("#save_btn").addEventListener("click", (e) => {
           number:number,
          
       }
-            let res = await fetch("https://tata1mg.herokuapp.com/products",{
+            let res = await fetch("https://tata1mg.herokuapp.com/address",{
                 method:"POST",
                 body:JSON.stringify(prd_body),
                 headers:{"Content-type":"application/json"}
