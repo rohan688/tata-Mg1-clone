@@ -5,6 +5,7 @@ const cors = require("cors");
 const connect = require("./confige/db");
 
 const productController=require("./controllers/product.controller");
+const addressController=require("./controllers/address.controller");
 const { register, login } = require("./controllers/user.controller");
 
 const app = express();
@@ -14,6 +15,7 @@ app.use(cors());
 app.use(express.json());
 
 app.use("/products",productController);
+app.use("/address",addressController);
 
 // /register
 app.post("/register", register);
