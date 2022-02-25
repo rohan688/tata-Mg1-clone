@@ -5,7 +5,7 @@ const cors = require("cors");
 const connect = require("./confige/db");
 
 const productController=require("./controllers/product.controller");
-
+const { register, login } = require("./controllers/user.controller");
 
 const app = express();
 
@@ -14,6 +14,11 @@ app.use(cors());
 app.use(express.json());
 
 app.use("/products",productController);
+
+// /register
+app.post("/register", register);
+// .login
+app.post("/login", login);
 
 app.get("/", async(req, res)=>{
   try{
