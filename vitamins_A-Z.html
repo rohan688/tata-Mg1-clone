@@ -6,9 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/multivitamins.css">
     <link rel="stylesheet" href="styles/footer.css">
+    <link rel="stylesheet" href="styles/navbar.css">
     <title>Document</title>
 </head>
 <body>
+    <div id="navbar"></div>
   <div id="main">
  <div id="filterbar">
 <p id="left_header">FILTER</p>
@@ -95,6 +97,8 @@
 <script type="module">
     import footer from "./script/footer.js";
     document.getElementById("footer").innerHTML=footer();
+    import navbar from "./script/navbar.js";
+    document.getElementById("navbar").innerHTML=navbar();
     </script>
 
 
