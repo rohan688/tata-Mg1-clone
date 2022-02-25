@@ -90,6 +90,7 @@ body{
 .brands{
     display: flex;
     justify-content: space-around;
+    margin-top: 260px;
    
    padding-left: 15%;
    padding-right: 15%;
