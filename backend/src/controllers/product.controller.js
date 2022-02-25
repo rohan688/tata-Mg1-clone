@@ -62,7 +62,7 @@ router.get("/ayurved", async (req,res) => {
 });
 
 
-router.get("/Mineral Supplements", async (req,res) => {
+router.get("/MineralSupplements", async (req,res) => {
   try{
       const page = req.query.page || 1;
       const size = req.query.size || 100;
