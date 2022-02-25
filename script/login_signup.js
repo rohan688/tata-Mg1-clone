@@ -152,14 +152,14 @@ document
   });
 
 document.getElementById("done").addEventListener("click", function () {
-  if (document.getElementById("one_time_p").value != 123456) {
-    document.getElementById("wrong_otp").style.display = "block";
-    if (document.getElementById("error").style.color == "green") {
-      document.getElementById("error").style.color = "red";
-      document.getElementById("error").innerHTML =
-        "<span class='a_orange' id='otp_sms'>Get OTP on SMS</span> | <span class='a_orange' id='otp_call'>Get OTP on Call</span>";
-    }
-  } else {
+  // if (document.getElementById("one_time_p").value != 123456) {
+  //   document.getElementById("wrong_otp").style.display = "block";
+  //   if (document.getElementById("error").style.color == "green") {
+  //     document.getElementById("error").style.color = "red";
+  //     document.getElementById("error").innerHTML =
+  //       "<span class='a_orange' id='otp_sms'>Get OTP on SMS</span> | <span class='a_orange' id='otp_call'>Get OTP on Call</span>";
+  //   }
+  // } else {
     let a = document.getElementById("account_2");
     let b = document.getElementById("account_1");
     let c = document.getElementById("verify_otp");
@@ -169,7 +169,7 @@ document.getElementById("done").addEventListener("click", function () {
     c.style.display = "none";
     d.style.display = "block";
     document.getElementById("wrong_otp").style.display = "none";
-  }
+ // }
 });
 
 document
@@ -191,12 +191,92 @@ document
       // c.style.display = "none";
       // d.style.display = "none";
       // e.style.display = "none";
-      window.location.href = "index.html";
+     // window.location.href = "index.html";
       document.getElementById("invalid_email").style.display = "none";
       document.getElementById("email_continue").style.marginTop = "125px";
     }
   });
 
+  var user_detail=JSON.parse(localStorage.getItem("user_detail")) || [];
+   // signup
+ let register_data;
+ async function Register(event){
+      try{
+          event.preventDefault();
+       register_data={
+         mobile:document.querySelector("#mobile_number").value,
+         password:document.querySelector("#one_time_p").value,
+         email:document.querySelector("#email_new").value,
+       };
+       register_data=JSON.stringify(register_data);
+       //console.log("register_data:",register_data);
+       let reg_api=`https://tata1mg.herokuapp.com/register`
+       let response=await fetch(reg_api,{
+           method:'POST',
+           body:register_data,
+           headers:{
+               "Content-Type":'application/json',
+           },
+       })
+       let data=await response.json();
+       console.log("data:",data);
+       if(data.error==true){
+           alert('Registration failed, user already exists')
+       }else{
+           alert('Registration Successful,Please login')
+           user_detail.push(data.token);
+           localStorage.setItem("user_detail",JSON.stringify(user_detail));
+           display();
+       }
+      }catch(err){
+          console.log("err:",err);
+      }
+   }
+   function display(){
+    window.location.href="login.html";
+  }
+
+
+  //login
+
+
+  let login_data;
+  let token = JSON.parse(localStorage.getItem("user_detail"));
+ async function login(event){
+      try{
+          event.preventDefault();
+       login_data={
+         mobile:document.querySelector("#login_mobile_number").value,
+         password:document.querySelector("#one_time_p").value,
+         email:document.querySelector("#email_new").value,
+       };
+       login_data=JSON.stringify(login_data);
+       //console.log("login_data:",login_data);
+       let reg_api=`https://tata1mg.herokuapp.com/login`
+       let response=await fetch(reg_api,{
+           method:'POST',
+           body:login_data,
+           headers:{
+               "Content-Type":'application/json',
+               Authorization:`Bearer ${token[0]}`,
+           },
+       })
+       let data=await response.json();
+       console.log("data:",data);
+       if(data.error==true){
+           alert('login failed,email or password is wrong')
+       }else{
+           alert('login Successful')
+           home();
+       }
+      }catch(err){
+          console.log("err:",err);
+      }
+   }
+
+   function home(){
+    window.location.href="index.html";
+  }
 // var close_elements = document.getElementsByClassName("close");
 // for (let i = 0; i < close_elements.length; i++) {
 //   close_elements[i].addEventListener("click", function () {

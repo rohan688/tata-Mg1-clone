@@ -181,11 +181,10 @@
           </p>
           <form>
             <input
-              type="number"
+              type="password"
               placeholder="One Time Password"
               id="one_time_p"
-              oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
-              maxlength="6"
+              minlength="8"
             />
           </form>
           <p id="wrong_otp">Please enter a valid OTP.</p>
@@ -213,7 +212,7 @@
             <input type="email" placeholder="Enter Email ID" id="email_new" />
           </form>
           <p id="invalid_email">Please enter a valid email ID.</p>
-          <button id="email_continue">CONTINUE</button>
+          <button id="email_continue" onclick="login(event)">CONTINUE</button>
           <div>
             <p id="terms">
               By logging up, you agree to our
