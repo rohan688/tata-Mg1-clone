@@ -144,13 +144,6 @@ async function multi(){
   }
   }
 
-
-
-
-
-
-
-  
     function displaymg(mg_data){
     
     mg_data.map(function(ele){
