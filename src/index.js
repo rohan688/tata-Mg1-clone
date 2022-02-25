@@ -6,7 +6,7 @@ const cors = require('cors');
 const signin = require('./controller/signin.controller');
 
 const connect = ()=>{
-    return mongoose.connect("mongodb+srv://user:pass@cluster0.4xk9u.mongodb.net/chki?retryWrites=true&w=majority")
+    return mongoose.connect("mongodb+srv://user:pass@cluster0.4xk9u.mongodb.net/amanbro?retryWrites=true&w=majority")
 };
 
 

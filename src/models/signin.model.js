@@ -2,9 +2,10 @@ const mongoose = require('mongoose');
 
 const signinSchema = new mongoose.Schema(
   {
-mobileNumber:{type:Number,require:true,unique:true},
-otp:{type:Number,required:true},
-email:{type:String,require:true,unique:true}
+    emailAdd:{type:String,require:true},
+    pass:{type:Number,required:true},
+    mobile:{type:Number,require:true},
+
   },
   {
     versionKey: false,
