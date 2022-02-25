@@ -1,6 +1,18 @@
-document.querySelector("#save_btn").addEventListener("click", (e) => {
-    e.preventDefault();
-    let flag=true;
+
+document.querySelector("#mg_home").addEventListener("click",() => {
+    window.location.href="index.html";
+})
+document.querySelector("#need_help").addEventListener("click", () => {
+    window.location.href="NeedHelp.html";
+})
+
+
+let add_data;
+ async function saveAdd(event){
+      try{
+          event.preventDefault();
+
+          let flag=true;
     let building=document.querySelector("#building_name").value;
     let pin=document.querySelector("#pincode").value;
     let locality=document.querySelector("#locality").value;
@@ -37,14 +49,34 @@ document.querySelector("#save_btn").addEventListener("click", (e) => {
         alert('Enter valid Mobile Number');
         flag=false;
     }
-    if(flag==true){
-        window.location.href="payment.html";
-    }
-})
+    
 
-document.querySelector("#mg_home").addEventListener("click",() => {
-    window.location.href="index.html";
-})
-document.querySelector("#need_help").addEventListener("click", () => {
-    window.location.href="NeedHelp.html";
-})
+       add_data={
+        flat_no:document.querySelector("#building_name").value,
+        landmark:document.querySelector("#Landmark").value,
+        pincode:document.querySelector("#pincode").value,
+        locality:document.querySelector("#locality").value,
+        city:document.querySelector("#city").value,
+        state:document.querySelector("#state").value,
+        customer_name:document.querySelector("#name").value,
+        mobile:document.querySelector("#mobile").value,
+       };
+       add_data=JSON.stringify(add_data);
+       let api=`https://tata1mg.herokuapp.com/address`
+       let response=await fetch(api,{
+           method:'POST',
+           body:add_data,
+           headers:{
+               "Content-Type":'application/json',
+           },
+       })
+       let data=await response.json();
+       console.log(data);
+
+       if(flag==true){
+        window.location.href="payment.html";
+      }
+      }catch(err){
+          console.log("err:",err);
+      }
+   }
