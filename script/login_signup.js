@@ -210,24 +210,31 @@ document
        };
        register_data=JSON.stringify(register_data);
        //console.log("register_data:",register_data);
-       let reg_api=`https://tata1mg.herokuapp.com/register`
-       let response=await fetch(reg_api,{
-           method:'POST',
-           body:register_data,
-           headers:{
-               "Content-Type":'application/json',
-           },
-       })
-       let data=await response.json();
-       console.log("data:",data);
-       if(data.error==true){
-           alert('Registration failed, user already exists or enter valid 10 digit mobile or valid email')
-       }else{
-           alert('Registration Successful,Please login')
-           user_detail=data.token;
-           localStorage.setItem("user_detail",JSON.stringify(user_detail));
-           display();
-       }
+       let mobile=document.querySelector("#mobile_number").value;
+       let password=document.querySelector("#one_time_p").value;
+      if(mobile.length==10&&password.length>=8){
+        let reg_api=`https://tata1mg.herokuapp.com/register`
+        let response=await fetch(reg_api,{
+            method:'POST',
+            body:register_data,
+            headers:{
+                "Content-Type":'application/json',
+            },
+        })
+        let data=await response.json();
+        console.log("data:",data);
+        if(data.error==true){
+            alert('Registration failed, user already exists or enter valid 10 digit mobile or valid email')
+        }else{
+            alert('Registration Successful,Please login')
+            user_detail=data.token;
+            localStorage.setItem("user_detail",JSON.stringify(user_detail));
+            display();
+        }
+      }else{
+        alert('Registration failed, user already exists or enter valid 10 digit mobile or valid email')
+        window.location.href="signup.html";
+      }
       }catch(err){
           console.log("err:",err);
       }
