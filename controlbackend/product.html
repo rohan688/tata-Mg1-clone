@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product_Entry</title>
+    <style>
+      #container{
+          display: flex;
+          margin-left: 20px;
+      }
+      #container>div{
+          margin-left: 50px;
+      }
+      #display>div{
+          width: 95%;
+          margin: auto;
+         background: lightskyblue;
+         margin-top: 10px;
+         border: indianred 2px solid;
+         padding: 10px;
+      }
+      #display>div>p{
+        word-wrap: break-word;
+      }
+    </style>
+</head>
+<body>
+    
+ <div id="container">
+    <div>
+        <h1>Post Product</h1>
+        <label for="">Product_name</label><br><br>
+        <input type="text" id="prd_name"><br><br>
+        <label for="">Product_image</label><br><br>
+        <input type="text" id="prd_img"><br><br>
+        <label for="">rating</label><br><br>
+        <input type="text" id="rating"><br><br>
+        <label for="">price</label><br><br>
+        <input type="text" id="price"><br><br>
+        <label for="">Afterdiscount_price</label><br><br>
+        <input type="text" id="dis_price"><br><br>
+        <label for="">package_type</label><br><br>
+        <input type="text" id="pck_type"><br><br>
+        <label for="">discount_percentage</label><br><br>
+        <input type="text" id="dis_perc"><br><br>
+        <label for="">category</label><br><br>
+        <select id='category'>
+           <option value="Multivitamins">Multivitamins</option>
+            <option value=">Vitamins A-Z">Vitamins A-Z</option> 
+            <option value="Mineral Supplements">Mineral Supplements</option> 
+            <option value="ayurved">ayurved</option> 
+        </select><br><br>
+        <label for="">Product_highlight</label><br><br>
+        <input type="text" id="prd_highlight"><br><br>
+        <button id="btn" onclick="productpost()">Submit</button>
+       </div>
+
+       <div>
+        <h1>Update Product</h1>
+
+        <label for="">Product_ID</label><br><br>
+        <input type="text" id="u_id"><br><br>
+        <label for="">Product_name</label><br><br>
+        <input type="text" id="u_prd_name"><br><br>
+        <label for="">Product_image</label><br><br>
+        <input type="text" id="u_prd_img"><br><br>
+        <label for="">rating</label><br><br>
+        <input type="text" id="u_rating"><br><br>
+        <label for="">price</label><br><br>
+        <input type="text" id="u_price"><br><br>
+        <label for="">Afterdiscount_price</label><br><br>
+        <input type="text" id="u_dis_price"><br><br>
+        <label for="">package_type</label><br><br>
+        <input type="text" id="u_pck_type"><br><br>
+        <label for="">discount_percentage</label><br><br>
+        <input type="text" id="u_dis_perc"><br><br>
+        <label for="">category</label><br><br>
+       <select id='u_category'>
+          <option value="Multivitamins">Multivitamins</option>
+           <option value=">Vitamins">Vitamins A-Z</option> 
+           <option value="Mineral Supplements">Mineral Supplements</option>
+           <option value="ayurved">ayurved</option> 
+       </select><br><br>
+        <label for="">Product_highlight</label><br><br>
+        <input type="text" id="u_prd_highlight"><br><br>
+        <button id="btn" onclick="updateProduct()">Update</button>
+
+       </div>
+
+            
+        <div>
+             <h1>Delete Product</h1>
+             <label for="">Product_ID</label><br><br>
+            <input type="text" id="delete_id" placeholder="Enter id to Delete" /></br></br>
+          
+
+            <button onclick="deleteProduct()">Delete</button>
+
+        </div>
+
+        
+ </div>
+
+ <h1>ALL PRODUCTS DATA</h1>
+ <div id="display">
+
+ </div>
+
+</body>
+</html>
+
+<script>
+    // product();
+    // async function product(){
+    //   try{
+    //       let res = await fetch("http://localhost:2222/products");
+    //       let data = await res.json();
+    //       console.log(data);
+    //   }catch(err){
+    //       console.log(err);
+    //   }
+    // }
+
+    //postrequest
+    async function productpost(){
+       
+      try{
+        let prd_body={
+
+        name:document.querySelector("#prd_name").value,
+        image:document.querySelector("#prd_img").value,
+        rating:document.querySelector("#rating").value,
+        mrp:document.querySelector("#price").value,
+        price:document.querySelector("#dis_price").value,
+        quantity:document.querySelector("#pck_type").value,
+        discount:document.querySelector("#dis_perc").value,
+        category:document.querySelector("#category").value,
+        prd_highlight:document.querySelector("#prd_highlight").value
+    }
+          let res = await fetch("https://tata1mg.herokuapp.com/products",{
+              method:"POST",
+              body:JSON.stringify(prd_body),
+              headers:{"Content-type":"application/json"}
+          });
+          let data = await res.json();
+          console.log(data);
+      }catch(err){
+          console.log(err);
+      }
+    }
+
+
+    async function deleteProduct(){
+   try{
+    let id =document.getElementById('delete_id').value
+
+    let response =await fetch(`https://tata1mg.herokuapp.com/products/${id}`,{
+        method:"DELETE",
+        headers:{
+            "Content-Type":'application/json'
+        }
+    })
+
+    let d=await response.json()
+    console.log(d);
+   }catch(err){
+       consoel.log(err);
+   }
+  }
+
+
+
+  async function updateProduct(){
+       //1.url 2.body 3.headers
+    try{
+        let  data = {
+
+        name:document.querySelector("#u_prd_name").value,
+        image:document.querySelector("#u_prd_img").value,
+        rating:document.querySelector("#u_rating").value,
+        mrp:document.querySelector("#u_price").value,
+        price:document.querySelector("#u_dis_price").value,
+        quantity:document.querySelector("#u_pck_type").value,
+        discount:document.querySelector("#u_dis_perc").value,
+        category:document.querySelector("#u_category").value,
+        prd_highlight:document.querySelector("#u_prd_highlight").value
+
+       }
+       data = JSON.stringify(data)
+       
+       let id =document.getElementById('u_id').value
+
+       let response = await fetch(`https://tata1mg.herokuapp.com/products/${id}`,{
+
+           method:'PATCH',
+           body:data,
+           headers:{
+               "Content-Type":'application/json'
+           }
+       })
+
+       let datas =await response.json()
+       console.log(datas);
+    }catch(err){
+       console.log("err:",err);
+      }
+    }
+
+
+
+display();
+let box=document.querySelector("#display");
+  async function display(){
+     try{
+
+       let res=await fetch(`https://tata1mg.herokuapp.com/products`);
+       let data=await res.json();
+       append(data);
+       console.log(data);
+     }catch(err){
+       console.log(err);
+     }
+  }
+
+  function append(data){
+    box.innerText="";
+    data.map((data) => {
+      let div=document.createElement('div');
+
+      let id=document.createElement('p');
+
+      id.innerText="ID - "+data._id;
+
+
+      let name=document.createElement('p');
+      name.innerText="Name - "+data.name;
+
+      let price=document.createElement('p');
+
+      price.innerText="After_discountPrice - "+data.price;
+
+      let mrp=document.createElement('p');
+      mrp.innerText="mrp - "+data.mrp;
+
+      let image=document.createElement('p');
+      image.innerText="Image url - "+data.image;
+
+      let rating=document.createElement('p');
+      rating.innerText="rating - "+data.rating;
+
+      let quantity=document.createElement('p');
+      quantity.innerText="package_type - "+data.quantity;
+
+      let discount_percentage=document.createElement('p');
+      discount_percentage.innerText="discount_percentage - "+data.discount;
+
+      let category=document.createElement('p');
+      category.innerText="category - "+data.category;
+
+      let prd_highlight=document.createElement('p');
+      prd_highlight.innerText="prd_highlight - "+data.prd_highlight;
+
+      div.append(id,name,price,mrp,image,rating,quantity,discount_percentage,category,prd_highlight);
+      box.append(div);
+    })
+  }
+
+</script>
