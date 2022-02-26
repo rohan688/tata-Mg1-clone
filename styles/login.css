@@ -192,3 +192,9 @@ form {
 #user_mobile {
   font-weight: bold;
 }
+
+#login_mobile_number,
+#one_time_p,
+#email_new{
+  outline: none;
+}
