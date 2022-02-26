@@ -239,7 +239,7 @@ document
 
   //login
 
-  var user_login=JSON.parse(localStorage.getItem("user_login"));
+  var user_login=JSON.parse(localStorage.getItem("user_login"))||"";
   let login_data;
  async function login(event){
       try{
@@ -265,7 +265,7 @@ document
            loginpage();
        }else{
            alert('login Successful')
-           user_login.push(true);
+           user_login=true;
            localStorage.setItem("user_login",JSON.stringify(user_login));
            home();
        }

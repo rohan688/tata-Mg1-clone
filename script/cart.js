@@ -98,8 +98,16 @@ if (cartItemsArr.length == 0) {
     localStorage.setItem("price_data", JSON.stringify(price_arr));
   }
 }
+
 document.getElementById("chkout").addEventListener("click", function () {
-  window.location.href = "address.html";
+  let user_login = JSON.parse(localStorage.getItem("user_login"));
+  if(user_login==true){
+    window.location.href = "address.html"; 
+  }else{
+    alert('Please login In first');
+    window.location.href = "login.html";
+  }
+  
 });
 document.querySelector("#mg_home").addEventListener("click", () => {
   window.location.href = "index.html";
