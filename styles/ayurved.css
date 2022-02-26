@@ -11,7 +11,7 @@ body{
     display: flex;
 }
 .slider{
-    content: url(../images/slider1.png);
+    content: url(../images/slider1.jpg);
     width: 60%;
     height: 280px;
     overflow-x: hidden;
@@ -20,19 +20,19 @@ body{
 }
 @keyframes slide{
     20%{
-        content: url(../images/slider2.jpg);
+        content: url(../images/slider2.png);
     }
     40%{
         content: url(../images/slider3.png);
     }
     60%{
-        content: url(../images/slider4.png);
+        content: url(../images/slider4.jpg);
     }
     80%{
         content: url(../images/slider5.jpg);
     }
     100%{
-        content: url(../images/slider1.png);
+        content: url(../images/slider1.jpg);
     }
 }
 .fixed_img{
