@@ -239,9 +239,8 @@ document
 
   //login
 
-
+  var user_login=JSON.parse(localStorage.getItem("user_login"));
   let login_data;
-  let token = JSON.parse(localStorage.getItem("user_detail"));
  async function login(event){
       try{
           event.preventDefault();
@@ -252,21 +251,22 @@ document
        };
        login_data=JSON.stringify(login_data);
        //console.log("login_data:",login_data);
-       let reg_api=`https://tata1mg.herokuapp.com/login`
+       let reg_api=`https://tata1mg.herokuapp.com/register/login`
        let response=await fetch(reg_api,{
            method:'POST',
            body:login_data,
            headers:{
                "Content-Type":'application/json',
-               Authorization:`Bearer ${token[0]}`,
            },
        })
        let data=await response.json();
-       console.log("data:",data);
-       if(data.error==true){
-           alert('login failed,email or password is wrong')
+       if(data==null){
+           alert('login failed,email or password or mobile is wrong')
+           loginpage();
        }else{
            alert('login Successful')
+           user_login.push(true);
+           localStorage.setItem("user_login",JSON.stringify(user_login));
            home();
        }
       }catch(err){
@@ -276,6 +276,9 @@ document
 
    function home(){
     window.location.href="index.html";
+  }
+  function loginpage(){
+    window.location.href="login.html";
   }
 // var close_elements = document.getElementsByClassName("close");
 // for (let i = 0; i < close_elements.length; i++) {
