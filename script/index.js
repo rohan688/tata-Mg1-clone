@@ -15,7 +15,6 @@ async function multi(){
   }
   }
 
-    displaymg(mg_data);
     function displaymg(mg_data){
     
     mg_data.map(function(ele){
@@ -92,7 +91,6 @@ async function multiple(){
       console.log("err:",e);
   }
   }
-    displaypre(pre_data);
     function displaypre(pre_data){
     
     pre_data.map(function(ele){
