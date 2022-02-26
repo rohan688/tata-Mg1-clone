@@ -13,20 +13,20 @@ const userSchema = new mongoose.Schema(
   }
 );
 
-userSchema.pre("save", function (next) {
-  if (!this.isModified("password")) return next();
+// userSchema.pre("save", function (next) {
+//   if (!this.isModified("password")) return next();
 
-  // secret , salt => sdkfhsdkfh , secret + sdkfhsdkfh => dskfgkcskdfgsdkfsdf
-  // salt
-  // hashing rounds =>
-  var hash = bcrypt.hashSync(this.password, 8);
-  this.password = hash;
-  return next();
-});
+//   // secret , salt => sdkfhsdkfh , secret + sdkfhsdkfh => dskfgkcskdfgsdkfsdf
+//   // salt
+//   // hashing rounds =>
+//   var hash = bcrypt.hashSync(this.password, 8);
+//   this.password = hash;
+//   return next();
+// });
 
-userSchema.methods.checkPassword = function (password) {
-  return bcrypt.compareSync(password, this.password);
-};
+// userSchema.methods.checkPassword = function (password) {
+//   return bcrypt.compareSync(password, this.password);
+// };
 
 const User = mongoose.model("user", userSchema); // user => users
 
