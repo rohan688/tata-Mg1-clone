@@ -12,10 +12,8 @@ const register = async (req, res) => {
     let user = await User.findOne({ mobile: req.body.mobile,email:req.body.email}).lean().exec();
 
     // if the user is found then it is an error
-    if (user)
-      return res.status(400).send("null");
-
-    // if user is not found then we will create the user with the email and the password provided
+    if (user!=null){
+        // if user is not found then we will create the user with the email and the password provided
     user = await User.create(req.body);
 
     // user = new User()
@@ -28,7 +26,11 @@ const register = async (req, res) => {
 
     // then return the user and the token
 
-    res.send({ user, token });
+    return res.send({ user, token });
+    }else{
+      return res.status(400).send("null");
+    }
+
   } catch (err) {
     res.status(500).send(err.message);
   }
