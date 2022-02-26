@@ -197,13 +197,13 @@ document
     }
   });
 
-  var user_detail=JSON.parse(localStorage.getItem("user_detail")) || "";
+ 
    // signup
  let register_data;
  async function Register(event){
       try{
           event.preventDefault();
-       register_data={
+      let register_data={
          mobile:document.querySelector("#mobile_number").value,
          password:document.querySelector("#one_time_p").value,
          email:document.querySelector("#email_new").value,
@@ -228,8 +228,6 @@ document
             window.location.href="signup.html";
         }else{
             alert('Registration Successful,Please login')
-            user_detail=data.token;
-            localStorage.setItem("user_detail",JSON.stringify(user_detail));
             display();
         }
       }else{
