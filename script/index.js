@@ -6,7 +6,7 @@ async function multi(){
        let res= await fetch("https://tata1mg.herokuapp.com/products?page=1&size=7")
 
        let data= await res.json();
-       console.log(data)
+       
         
       displaymg(data);
   }
@@ -83,7 +83,6 @@ async function multiple(){
        let res= await fetch("https://tata1mg.herokuapp.com/products?page=2&size=7")
 
        let data= await res.json();
-       console.log(data)
         
       displaypre(data);
   }

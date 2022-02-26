@@ -197,7 +197,7 @@ document
     }
   });
 
-  var user_detail=JSON.parse(localStorage.getItem("user_detail")) || [];
+  var user_detail=JSON.parse(localStorage.getItem("user_detail")) || "";
    // signup
  let register_data;
  async function Register(event){
@@ -221,10 +221,10 @@ document
        let data=await response.json();
        console.log("data:",data);
        if(data.error==true){
-           alert('Registration failed, user already exists')
+           alert('Registration failed, user already exists or enter valid 10 digit mobile or valid email')
        }else{
            alert('Registration Successful,Please login')
-           user_detail.push(data.token);
+           user_detail=data.token;
            localStorage.setItem("user_detail",JSON.stringify(user_detail));
            display();
        }
