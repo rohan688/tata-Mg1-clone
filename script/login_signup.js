@@ -222,9 +222,10 @@ document
             },
         })
         let data=await response.json();
-        console.log("data:",data);
-        if(data.error==true){
-            alert('Registration failed, user already exists or enter valid 10 digit mobile or valid email')
+        //console.log("data:",data);
+        if(data==null){
+            alert('Registration failed, user already exists or enter valid 10 digit mobile or valid email');
+            window.location.href="signup.html";
         }else{
             alert('Registration Successful,Please login')
             user_detail=data.token;
