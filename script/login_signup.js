@@ -111,7 +111,7 @@ document
       document.getElementById("account_invalid_num").style.display = "block";
       document.getElementById("account_continue").style.marginTop = "20px";
     } else {
-      localStorage.setItem("mobile_number", JSON.stringify(number));
+     // localStorage.setItem("mobile_number", JSON.stringify(number));
       document.getElementById("user_mobile").textContent = number;
       let a = document.getElementById("account_2");
       let b = document.getElementById("account_1");
@@ -136,7 +136,7 @@ document
       document.getElementById("login_invalid_num").style.display = "block";
       document.getElementById("login_button-1").style.marginTop = "20px";
     } else {
-      localStorage.setItem("mobile_number", JSON.stringify(number));
+     // localStorage.setItem("mobile_number", JSON.stringify(number));
       document.getElementById("user_mobile").textContent = number;
       let a = document.getElementById("account_2");
       let b = document.getElementById("account_1");
@@ -180,7 +180,7 @@ document
       document.getElementById("email_continue").style.marginTop = "20px";
     } else {
       let f = document.getElementById("email_new").value;
-      localStorage.setItem("email", JSON.stringify(f));
+     // localStorage.setItem("email", JSON.stringify(f));
       // let a = document.getElementById("account_2");
       // let b = document.getElementById("account_1");
       // let c = document.getElementById("verify_otp");
